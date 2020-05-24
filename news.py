@@ -14,7 +14,6 @@ def Parsefeed():
         f1 = feedparser.parse("https://feeds.feedburner.com/ndtvnews-top-stories")
         f = feedparser.parse("https://feeds.feedburner.com/ndtvnews-top-stories")
     ICON_PATH = os.getcwd() + "/icon.ico"
-    c=1
     for newsitem in f['items']:
         if c<=5:
             modified = f1.get('modified')
