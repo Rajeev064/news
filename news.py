@@ -14,8 +14,9 @@ def Parsefeed():
         f1 = feedparser.parse("https://feeds.feedburner.com/ndtvnews-top-stories")
         f = feedparser.parse("https://feeds.feedburner.com/ndtvnews-top-stories")
     ICON_PATH = os.getcwd() + "/icon.ico"
+    c=1
     for newsitem in f['items']:
-        if c<=5:
+        if c<=10:
             modified = f1.get('modified')
             if modified is not None:
                 print(modified)
@@ -27,7 +28,7 @@ def Parsefeed():
                 t.show_toast(title,summary,ICON_PATH,duration = 10)
                 c = c+1
             else :
-                if c<=5:
+                if c<=10:
                     today = date.today()
                     modified = today.strftime("%B %d, %Y")
                     print(modified)
